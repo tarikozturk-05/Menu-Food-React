@@ -1,9 +1,12 @@
 import React from "react";
 
-const Menu = ({ items }) => {
+const Menu = ({ items,catagory }) => {
+
+
+
   return (
     <div className="section-center">
-      {items.map((items) => {
+      {items.filter((item)=>(catagory !=="" ? item.category === catagory : true )).map((items) => {
         const { id, title, img, desc,price } = items;
         return (
           <main key={id} className="menu-item">
